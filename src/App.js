@@ -14,7 +14,7 @@ function App() {
       <Route exact path="/auth">
         <LoginSingup />
       </Route>
-      <Route exact path="/interface">
+      <Route exact path="/user">
         <Interface />
       </Route>
     </Switch>

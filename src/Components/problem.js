@@ -57,39 +57,38 @@ function Problem() {
   };
 
   return (
-    <Route exact path="/interface">
-      <div className="container1 mt-2 px-3">
-        <h3> probleme 1:</h3>
-        <div className="container1">
-          <p>
-            {" "}
-            Ecrire une fonction qui affiche le message :{" "}
-            <code>hello world </code>{" "}
-          </p>
-        </div>
-        <div className="text-container">
-          <div className="EditorContainer mr-3 mb-3">
-            <AceEditor
-              mode="c_cpp"
-              theme="xcode"
-              height="300px"
-              value={userCode}
-              onChange={(newValue) => {
-                setUserCode(newValue);
-              }}
-            />
-          </div>
-          <button
-            className="btn btn-outline-primary float-right mr-3"
-            type="submit"
-            onClick={handleClick}
-          >
-            Submit
-          </button>
-          {CodeStatus}
-        </div>
+    <div className="container1 mt-2 px-3">
+      <h3> probleme 1:</h3>
+      <div className="container1">
+        <p>
+          {" "}
+          Ecrire une fonction qui affiche le message : <code>
+            hello world{" "}
+          </code>{" "}
+        </p>
       </div>
-    </Route>
+      <div className="text-container">
+        <div className="EditorContainer mr-3 mb-3">
+          <AceEditor
+            mode="c_cpp"
+            theme="xcode"
+            height="300px"
+            value={userCode}
+            onChange={(newValue) => {
+              setUserCode(newValue);
+            }}
+          />
+        </div>
+        <button
+          className="btn btn-outline-primary float-right mr-3"
+          type="submit"
+          onClick={handleClick}
+        >
+          Submit
+        </button>
+        {CodeStatus}
+      </div>
+    </div>
   );
 }
 export default Problem;

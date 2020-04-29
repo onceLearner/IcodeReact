@@ -7,9 +7,11 @@ import * as serviceWorker from "./serviceWorker";
 
 function Interface(props) {
   return (
-    <div>
-      <Problem></Problem>
-    </div>
+    <Route exact path="/interface">
+      <div>
+        <Problem></Problem>
+      </div>
+    </Route>
   );
 }
 export default Interface;

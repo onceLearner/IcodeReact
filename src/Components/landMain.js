@@ -21,7 +21,7 @@ function LandMain(props) {
       <div className="mainTextContainer ">
         <h1 className="hamid  mt-5 ml-3 mb-5 ">
           {" "}
-          Sharpen your coding Skills!{" "}
+          Sharpen your coding Skills! Travis{" "}
         </h1>
 
         <a href="/auth" className="ml-5 px-5 ">

@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+  warning_are_errors: false
+install: 
+ - npm install 
+script:
+ - npm run build
+deoloy:
+ provider: firebase
+ skip_cleanup: true
+ token: 
+ $FIREBASE_TOKEN
+  

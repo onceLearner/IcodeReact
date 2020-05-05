@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GrInProgress } from "react-icons/gr";
+import { RiUser4Line } from "react-icons/ri";
 
 function Login(props) {
   const [username, setUsername] = useState("");
@@ -37,10 +38,15 @@ function Login(props) {
         // check if the user exists
         if (reda) {
           setTimeout(setSuccess(waitIcon), 3000);
+          localStorage.setItem("username", username);
+
           // setSuccess(Exist);
           setTimeout(() => {
             setSuccess(Exist);
           }, 1000);
+          setTimeout(() => {
+            window.location.replace("/user");
+          }, 3000);
         } else {
           setTimeout(setSuccess("Wait..."), 3000);
           setSuccess(DontExist);
@@ -55,6 +61,7 @@ function Login(props) {
   var Button = (
     <button
       type="button"
+      id="btnSignup"
       className="btn btn-outline-dark text-right"
       onClick={handleLogin}
     >
@@ -67,8 +74,12 @@ function Login(props) {
   if (props.login % 2 == 1) {
     return (
       <div>
-        <div className="container">
-          <div className="row mt-5">
+        <div className="container1">
+          <div className="text-center mt-5">
+            {" "}
+            <RiUser4Line size="1.4em"></RiUser4Line>{" "}
+          </div>
+          <div className="row mt-2">
             <form className="mx-auto mt-4 ">
               <label>email</label>
               <input

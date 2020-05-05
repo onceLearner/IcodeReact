@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap");
+
+.loginSignup {
+  font-family: "Baloo Tamma 2", cursive;
+}
+#loginSignupLabel {
+  color: rgb(110, 186, 196);
+}

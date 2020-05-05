@@ -7,10 +7,15 @@ import Login from "./Components/login";
 import { Route, Switch } from "react-router-dom";
 import LoginSingup from "./loginSignup";
 import Interface from "./interface";
+import Landing from "./landing";
 
 function App() {
   return (
     <Switch>
+      <Route exact path="/">
+        <Landing />
+      </Route>
+
       <Route exact path="/auth">
         <LoginSingup />
       </Route>

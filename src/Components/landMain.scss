@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poiret+One&display=swap");
+.hamid {
+  transform: translateY(20px);
+  color: white;
+  font-family: "Poiret One", cursive;
+}
+#mainGrid {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  overflow: hidden;
+  height: 500px;
+}
+
+#bgContainer {
+  background-color: #212529;
+}
+
+#mainImg {
+  // height: 85%;
+  margin-left: 5%;
+  margin-top: 20px;
+  transform: perspective(300px) rotateY(20deg) scale(0.8) translateX(40px);
+
+  filter: drop-shadow(0px 15px 130px #374447);
+  // transform: rotate3d(-3, 22, 0, 10deg);
+}

@@ -11,20 +11,18 @@ import Landing from "./landing";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
+    <Switch>
+      <Route exact path="/">
+        <Landing />
+      </Route>
 
-        <Route path="/auth">
-          <LoginSingup />
-        </Route>
-        <Route exact path="/user">
-          <Interface />
-        </Route>
-      </Switch>
-    </Router>
+      <Route path="/auth">
+        <LoginSingup />
+      </Route>
+      <Route exact path="/user">
+        <Interface />
+      </Route>
+    </Switch>
   );
 }
 export default App;

@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/src/App.js">
     <App />
   </BrowserRouter>,
   document.getElementById("root")

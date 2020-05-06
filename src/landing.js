@@ -7,7 +7,8 @@ function Langing(props) {
   return (
     <div className="" id="bgContainer">
       <Navbar></Navbar>
-      <div className="b">
+      <div className="">
+        <p>jkjfkjkfdjlkj</p>
         <LandMain></LandMain>
       </div>
     </div>

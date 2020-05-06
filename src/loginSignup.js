@@ -32,7 +32,7 @@ function LoginSingup() {
             {" "}
             sf
           </Reda>
-          <span className={DarkOrInfo1}>Signup</span>
+          <span className={DarkOrInfo1}>Signup dhfakjh</span>
         </div>
 
         <Signup signup={signup} />

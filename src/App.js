@@ -12,14 +12,14 @@ import Landing from "./landing";
 function App() {
   return (
     <Switch>
-      <Route path="/">
+      <Route exact path="/">
         <Landing />
       </Route>
 
       <Route path="/auth">
         <LoginSingup />
       </Route>
-      <Route path="/user">
+      <Route exact path="/user">
         <Interface />
       </Route>
     </Switch>

@@ -6,7 +6,7 @@ import HashLoader from "react-spinners/HashLoader";
 import Navbar from "./navbar";
 import ListProblems from "./listProblems";
 import ExplainProblem from "./explainProblem";
-import CodeHandler from "./codeHandler";
+import CodeHandler from "./codeHandler.js";
 
 import "./problem.scss";
 

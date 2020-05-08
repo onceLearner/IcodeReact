@@ -53,9 +53,14 @@ function Problem() {
   const [loading, setLoading] = useState(true);
   const [actualProblem, setsctualProblem] = useState(4);
 
+  const localBack = "http://localhost:8443/getP";
+  const RemoteBack = "https://arcane-ridge-61898.herokuapp.com/v4";
+  const RemoteAmazon =
+    "https://icoder2-env.eba-pgphjrgm.us-east-1.elasticbeanstalk.com:8443/getP";
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:8443/getP");
+      const response = await fetch(RemoteAmazon);
       const data = await response.json();
       await setArrayProblems(data);
       setsctualProblem(data[0]);

@@ -5,6 +5,19 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: [
+      "Titillium Web:300,400,700",
+      "sans-serif",
+      "Abel",
+      "Kalam:wght@300;400",
+      "Kanit:ital,wght@1,200",
+    ],
+  },
+});
 
 ReactDOM.render(
   <BrowserRouter basename="/src/App.js">

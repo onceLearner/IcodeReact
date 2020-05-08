@@ -14,10 +14,10 @@ function LoginSingup() {
   const DarkOrInfo1 = !Toggler ? "text-dark h5  " : "text-info h5 py-1   ";
 
   var Reda = Toggler ? FiToggleRight : FiToggleLeft; // toggle betwwen them using state managent only
-
+  var style = { backgroundColor: "#212529" };
   return (
     <Route path="/auth">
-      <div className="loginSignup">
+      <div className="loginSignup " style={style}>
         <div className="text-center mt-3 mb-3" id="loginSignupLabel">
           <span className={DarkOrInfo}>login</span>
           <Reda
@@ -32,7 +32,7 @@ function LoginSingup() {
             {" "}
             sf
           </Reda>
-          <span className={DarkOrInfo1}>Signup dhfakjh</span>
+          <span className={DarkOrInfo1}>Signup</span>
         </div>
 
         <Signup signup={signup} />

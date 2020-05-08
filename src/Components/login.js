@@ -24,7 +24,7 @@ function Login(props) {
 
   const handleLogin = () => {
     var reda;
-    fetch("http://localhost:8081/fakeGet")
+    fetch("http://localhost:8443/fakeGet")
       .then((res) => {
         return res.json();
       })
@@ -62,7 +62,7 @@ function Login(props) {
     <button
       type="button"
       id="btnSignup"
-      className="btn btn-outline-dark text-right"
+      className="btn btn-outline-light text-right"
       onClick={handleLogin}
     >
       {" "}
@@ -74,14 +74,13 @@ function Login(props) {
   if (props.login % 2 == 1) {
     return (
       <div>
-        <div className="container1">
+        <div className="container1 text-white">
           <div className="text-center mt-5">
-            {" "}
             <RiUser4Line size="1.4em"></RiUser4Line>{" "}
+            <p className="text-white text-center h5 mt-3">welcome</p>{" "}
           </div>
           <div className="row mt-2">
             <form className="mx-auto mt-4 ">
-              <p>hello lfdskjkjfdslkjlk</p>
               <label>email</label>
               <input
                 value={username}

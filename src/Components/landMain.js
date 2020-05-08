@@ -2,6 +2,8 @@ import React from "react";
 import "./landMain.scss";
 import { ClimbingBoxLoader } from "react-spinners";
 import { RiEmotionHappyLine } from "react-icons/ri";
+import { GrNext } from "react-icons/gr";
+
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 function LandMain(props) {
@@ -21,16 +23,31 @@ function LandMain(props) {
       <div className="mainTextContainer ">
         <h1 className="hamid  mt-5 ml-3 mb-5 ">
           {" "}
-          Sharpen your coding Skills! Starts Here{" "}
+          Sharpen your coding Skills!{" "}
         </h1>
 
-        <a href="/auth" className="ml-5 px-5 ">
+        <a
+          href="/auth"
+          className="ml-5 px-3 "
+          style={{ textDecoration: "none" }}
+        >
           <button
             type="butto"
-            className="ml-5  col-4 position-relative btn btn-primary rounded-pill"
+            className="ml-2 col-4 position-relative btn btn-primary rounded-pill"
           >
-            <strong> Get Started!</strong>
-          </button>
+            <strong className=""> Get Started!</strong>
+          </button>{" "}
+        </a>
+        <span className=" text-white "> or </span>
+        <a
+          href="/user"
+          className="text-white"
+          style={{ textDecoration: "none" }}
+        >
+          <button type="button" className="btn btn-outline-light ml-3">
+            Demo
+          </button>{" "}
+          >
         </a>
       </div>
     </div>

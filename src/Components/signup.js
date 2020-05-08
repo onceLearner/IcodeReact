@@ -35,7 +35,7 @@ class Signup extends Component {
    * handle the signup by posting the user
    */
   handleSignup = () => {
-    fetch("http://localhost:8081/signup", {
+    fetch("http://localhost:8443/signup", {
       method: "post",
       body: JSON.stringify(this.state),
       headers: { "content-type": "application/json" },
@@ -67,10 +67,11 @@ class Signup extends Component {
     if (this.props.signup % 2 == 0) {
       return (
         <div>
-          <div className="container1">
+          <div className="container1 text-white">
             <div className="text-center mt-5">
               {" "}
               <RiUser4Line size="1.4em"></RiUser4Line>{" "}
+              <p className="text-white text-center h5 mt-3">welcome</p>{" "}
             </div>
             <div className="row mt-3">
               <form className="mx-auto mt-2">
@@ -101,7 +102,7 @@ class Signup extends Component {
               <button
                 id="btnSignup"
                 type="button"
-                className="btn btn-outline-dark text-right"
+                className="btn btn-outline-light text-right"
                 onClick={this.handleSignup}
               >
                 signup

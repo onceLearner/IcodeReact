@@ -7,12 +7,13 @@ form {
   .container1 {
     margin-top: 40px;
     border-radius: 10px;
-    border: rgb(228, 229, 231) solid 0.1mm;
+    border: rgb(49, 50, 51) solid 0.1mm;
     width: 65%;
     height: 400px;
     margin: auto;
     background-color: rgb(255, 255, 255);
-    box-shadow: 5px 4px 14px 4px rgb(235, 237, 247);
+    box-shadow: 5px 4px 14px 4px rgb(62, 69, 92);
+    background-color: #212529;
   }
 }
 
@@ -26,4 +27,24 @@ form {
   width: 106px;
   height: 37px;
   padding-right: 27px;
+}
+body {
+  background-color: #212529;
+}
+
+input {
+  background-color: purple;
+}
+#root > div > div:nth-child(2) > div > div.row.mt-3 > form > input {
+  background-color: #495057;
+  border: 1px #495057;
+  color: white;
+}
+#root > div > div:nth-child(2) > div > div.row.mt-2 > form > input {
+  background-color: #495057;
+  border: 1px #495057;
+  color: white;
+}
+.loginSignup {
+  overflow: hidden;
 }

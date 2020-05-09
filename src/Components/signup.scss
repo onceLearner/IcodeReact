@@ -7,13 +7,12 @@ form {
   .container1 {
     margin-top: 40px;
     border-radius: 10px;
-    border: rgb(49, 50, 51) solid 0.1mm;
+    border: rgb(191, 194, 196) solid 0.1mm;
     width: 65%;
-    height: 400px;
+    height: 430px;
     margin: auto;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 5px 4px 14px 4px rgb(62, 69, 92);
-    background-color: #212529;
+    background-color: rgb(245, 247, 250);
+    box-shadow: 5px 4px 14px 3px rgb(216, 216, 219);
   }
 }
 
@@ -28,22 +27,24 @@ form {
   height: 37px;
   padding-right: 27px;
 }
-body {
-  background-color: #212529;
-}
 
 input {
   background-color: purple;
 }
 #root > div > div:nth-child(2) > div > div.row.mt-3 > form > input {
-  background-color: #495057;
   border: 1px #495057;
-  color: white;
+  background-color: rgb(241, 241, 241);
+  &:focus {
+    border-left: rgb(156, 128, 240) solid 3px;
+  }
 }
 #root > div > div:nth-child(2) > div > div.row.mt-2 > form > input {
-  background-color: #495057;
-  border: 1px #495057;
-  color: white;
+  border: 1px #495753;
+  background-color: rgb(241, 241, 241);
+
+  &:focus {
+    border-left: rgb(128, 145, 240) solid 3px;
+  }
 }
 .loginSignup {
   overflow: hidden;

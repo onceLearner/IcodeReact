@@ -15,6 +15,7 @@ WebFont.load({
       "Abel",
       "Kalam:wght@300;400",
       "Kanit:ital,wght@1,200",
+      "Source+Sans+Pro:wght@300",
     ],
   },
 });

@@ -17,7 +17,7 @@ function LoginSingup() {
   var style = { backgroundColor: "#212529" };
   return (
     <Route path="/auth">
-      <div className="loginSignup " style={style}>
+      <div className="loginSignup ">
         <div className="text-center mt-3 mb-3" id="loginSignupLabel">
           <span className={DarkOrInfo}>login</span>
           <Reda

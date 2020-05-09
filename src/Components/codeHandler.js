@@ -71,12 +71,9 @@ function CodeHandler(probs) {
         else setCodeStatus(codeCorrect);
       });
   };
-  var darkmode = probs.darkmode
-    ? { backgroundColor: "#212529" }
-    : { backgroundColor: "white" };
 
   return (
-    <div style={darkmode}>
+    <div>
       <button
         className="btn btn-success float-right mr-5 "
         type="submit"

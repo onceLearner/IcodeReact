@@ -4,7 +4,7 @@ import { DiPython, DiJava, DiCodeBadge } from "react-icons/di";
 import AceEditor from "react-ace";
 import HashLoader from "react-spinners/HashLoader";
 import Navbar from "./navbar";
-import ListProblems from "./listProblems";
+
 import ExplainProblem from "./explainProblem";
 import CodeHandler from "./codeHandler.js";
 
@@ -73,12 +73,11 @@ function Problem() {
     }, 2000);
   }, []);
 
-  var darkmode = { backgroundColor: "#212529" };
+  var darkmode = { backgroundColor: "#fff" };
 
   return (
     <div className="problemMainDiv" style={darkmode}>
-      <Navbar />
-      <div className="listProblemsCont container    mt-4 white">
+      <div className="listProblemsCont container    mt-4 ">
         {loading ? (
           "loading ..."
         ) : (
@@ -97,36 +96,36 @@ function Problem() {
           </div>
         )}
       </div>
-
-      <div className="text-container container">
-        <ExplainProblem actualProblem={actualProblem} />
+      <div className="EditorTextCont ">
+        <div className="text-container container">
+          <ExplainProblem actualProblem={actualProblem} />
+        </div>
+        <div className="editorLangCont">
+          <div className="selectContainer text-dark bg-light  float-right mr-5 px-3">
+            <Select
+              options={Languages}
+              value={userLang}
+              onChange={(newvalue) => {
+                setUserLang(newvalue[0].name);
+              }}
+              className=" mr-4"
+              placeholder={" language </>"}
+            />
+          </div>
+          <div className="EditorContainer mr-3 mt-4 ml-3 mb-3  ">
+            <AceEditor
+              className="border  border-white"
+              mode={userLang}
+              theme="dracula"
+              height="300px"
+              value={userCode}
+              onChange={(newValue) => {
+                setUserCode(newValue);
+              }}
+            />
+          </div>
+        </div>
       </div>
-
-      <div className="selectContainer text-dark bg-light mr-3">
-        <Select
-          options={Languages}
-          value={userLang}
-          onChange={(newvalue) => {
-            setUserLang(newvalue[0].name);
-          }}
-          className=" mr-4"
-          placeholder={" language </>"}
-        />
-      </div>
-      <div className="EditorContainer mr-3 mt-4 ml-3 mb-3 text-center  ">
-        <AceEditor
-          className="border  border-white"
-          mode={userLang}
-          theme="dracula"
-          height="300px"
-          width="95%"
-          value={userCode}
-          onChange={(newValue) => {
-            setUserCode(newValue);
-          }}
-        />
-      </div>
-
       <div className="codeHandler">
         <CodeHandler
           darkmode="true"

@@ -2,10 +2,12 @@
   width: 100%;
 }
 .selectContainer {
-  float: right;
   margin-bottom: 20px;
   width: 31%;
 }
 .problemMainDiv {
-  overflow: hidden;
+}
+.EditorTextCont {
+  display: grid;
+  grid-template-columns: 50% auto;
 }

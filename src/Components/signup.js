@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./signup.scss";
-import { GrInProgress } from "react-icons/gr";
+import { GrInProgress, GrMail } from "react-icons/gr";
 import { RiUser4Line } from "react-icons/ri";
 
 const waitIcon = <GrInProgress size="25px" className="ml-4"></GrInProgress>;
@@ -67,11 +67,11 @@ class Signup extends Component {
     if (this.props.signup % 2 == 0) {
       return (
         <div>
-          <div className="container1 text-white">
+          <div className="container1 ">
             <div className="text-center mt-5">
               {" "}
               <RiUser4Line size="1.4em"></RiUser4Line>{" "}
-              <p className="text-white text-center h5 mt-3">welcome</p>{" "}
+              <p className=" text-center h5 mt-3">welcome</p>{" "}
             </div>
             <div className="row mt-3">
               <form className="mx-auto mt-2">
@@ -81,6 +81,7 @@ class Signup extends Component {
                   onChange={this.handleUsername}
                   type="text"
                   name="username"
+                  placeholder="&#xF002;"
                   className="form-control col-md-15 "
                 ></input>
                 <label>password</label>
@@ -89,6 +90,7 @@ class Signup extends Component {
                   onChange={this.handlePassword}
                   type="password"
                   name="password"
+                  placeholder=""
                   className="form-control col-md-15"
                 ></input>
                 <label> Repeat password</label>
@@ -102,7 +104,7 @@ class Signup extends Component {
               <button
                 id="btnSignup"
                 type="button"
-                className="btn btn-outline-light text-right"
+                className="btn btn-outline-dark text-right"
                 onClick={this.handleSignup}
               >
                 signup

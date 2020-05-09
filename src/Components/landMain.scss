@@ -1,26 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poiret+One&display=swap");
-.hamid {
-  transform: translateY(20px);
-  color: white;
-  font-family: "Poiret One", cursive;
+@media (max-width: 600px) {
+  #mainGrid {
+    margin-top: 190px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    height: 550px;
+  }
 }
-#mainGrid {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  overflow: hidden;
-  height: 500px;
+@media (min-width: 700px) {
+  #mainGrid {
+    display: grid;
+    grid-template-columns: 450px auto;
+    height: 500px;
+  }
+  #imganding {
+    width: 79%;
+  }
 }
 
 #bgContainer {
-  background-color: #212529;
+  background-color: rgb(247, 249, 255);
+
+  box-shadow: 2px 2x 2x 2px rgb(225, 233, 232);
 }
 
-#mainImg {
-  // height: 85%;
-  margin-left: 5%;
-  margin-top: 20px;
-  transform: perspective(300px) rotateY(20deg) scale(0.8) translateX(40px);
-
-  filter: drop-shadow(0px 15px 130px #374447);
-  // transform: rotate3d(-3, 22, 0, 10deg);
+#navbarSupportedContent > a:nth-child(3) > button {
+  border-radius: 20px;
+  border: 2px solid rgb(48, 18, 128);
+  box-shadow: 1px 1px 1px 1px rgb(238, 238, 238);
+  color: black;
+  background-color: rgba(247, 247, 247, 0.959);
+  &:hover {
+    background-color: rgb(48, 18, 128);
+    color: white;
+  }
+}
+#login {
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+body {
+  overflow-x: hidden;
+}
+#maintitle {
+  color: red;
+}
+#logo {
+  img {
+    max-height: 55px;
+    transform: scale(1.4);
+    max-width: 120px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

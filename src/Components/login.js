@@ -24,7 +24,9 @@ function Login(props) {
 
   const handleLogin = () => {
     var reda;
-    fetch("http://localhost:8443/fakeGet")
+    fetch(
+      "https://icoder2-env.eba-pgphjrgm.us-east-1.elasticbeanstalk.com:8443/fakeGet"
+    )
       .then((res) => {
         return res.json();
       })

@@ -35,11 +35,14 @@ class Signup extends Component {
    * handle the signup by posting the user
    */
   handleSignup = () => {
-    fetch("http://localhost:8443/signup", {
-      method: "post",
-      body: JSON.stringify(this.state),
-      headers: { "content-type": "application/json" },
-    })
+    fetch(
+      "https://icoder2-env.eba-pgphjrgm.us-east-1.elasticbeanstalk.com:8443/signup",
+      {
+        method: "post",
+        body: JSON.stringify(this.state),
+        headers: { "content-type": "application/json" },
+      }
+    )
       .then((data) => {
         console.log(data);
 

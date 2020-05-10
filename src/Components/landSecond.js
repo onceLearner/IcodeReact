@@ -3,14 +3,15 @@ import Select from "react-dropdown-select";
 
 function LandSecond(probs) {
   return (
-    <div className="bg-light  row">
-      <div className="mt-4 ml-4">
-        <h3 style={{ fontFamily: "SourceSansPro" }}>
+    <div className="d-flex ">
+      <div className="mt-4 ml-4 col-6 ">
+        <h4 style={{ fontFamily: "SourceSansPro" }}>
           Resolve problems, level up your coding Confidence
-        </h3>
-        <p>
+        </h4>
+        <p className="text-justfy">
           choose a problem, chose you favourite language a language Run your
-          code
+          code Get better in Coding through problem solving , Challenging your
+          friends and taking part in competitions !
         </p>
       </div>
       <div>
@@ -18,8 +19,8 @@ function LandSecond(probs) {
           id="e4bbe722-77af-4dff-9d23-13f94132c30a"
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
-          width="160%"
-          height="100%"
+          width="100%"
+          height="auto"
           viewBox="0 0 921.71991 653.40956"
         >
           <title>hacker_mindset</title>

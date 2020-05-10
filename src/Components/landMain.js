@@ -1,31 +1,62 @@
 import React, { useState } from "react";
+import TypeWriter from "react-animate-typewriter";
+
 import "./landMain.scss";
 import { ClimbingBoxLoader } from "react-spinners";
 import { RiEmotionHappyLine } from "react-icons/ri";
 import { GrNext, GrJava, GrCaretNext } from "react-icons/gr";
 
-import { FaQuoteLeft, FaQuoteRight, FaPython } from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight, FaPython, FaJava } from "react-icons/fa";
+import { languages } from "prismjs";
 
 function LandMain(props) {
-  const [languages, setLanguages] = useState(true);
-  // document.addEventListener(document.body, setLanguages(false));
-  return (
-    <div
-      className="lanMainCont"
-      onScroll={() => {
-        setLanguages(false);
-        console.log(languages);
+  const languages = (
+    <div className="mt-3">
+      <p className=""> supported </p>
+      <FaPython className="mr-4" size="1em">
+        {" "}
+      </FaPython>
+      <FaJava className="mr-4" size="3em" />
+      <b className="mr-2">C</b>
+    </div>
+  );
+
+  const text = (
+    <p className="mainTitle mt-3 display-4 " style={{ fontSize: "300%" }}>
+      {" "}
+      Sharpen Your Coding Skills !
+    </p>
+  );
+
+  const hiddenText = (
+    <h5
+      className="mainTitle mt-3 "
+      style={{
+        fontFamily: "Source Sans Pro",
+        color: "#014",
+        wordSpacing: "3px",
       }}
-      id="mainGrid"
     >
+      {" "}
+      and Get{" "}
+      <span style={{ color: "red" }}>
+        {" "}
+        <code>better </code>{" "}
+      </span>
+      everyday !{" "}
+    </h5>
+  );
+
+  return (
+    <div className="lanMainCont" id="mainGrid">
       {" "}
       <div id="imglanding" className=" col-xl m-4">
         <svg
-          className="mt-3 ml-5"
+          className="mt-3 ml-3"
           id="b52d7e2d-d80f-4111-b6ed-d15502ee1edd"
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
-          width="80%"
+          width="90%"
           height="60%"
           viewBox="0 0 711.1879 669.68268"
         >
@@ -366,25 +397,10 @@ function LandMain(props) {
         </svg>
       </div>
       <div className="mainTextContainer  text-center mr-5 ">
-        <h2
-          className="mainTitle mt-4 "
-          style={{
-            fontFamily: "Source Sans Pro",
-            color: "#014",
-            wordSpacing: "3px",
-          }}
-        >
-          {" "}
-          Push Your Coding Skills <span style={{ color: "red" }}>
-            {" "}
-            Beyond{" "}
-          </span>{" "}
-          Limits!{" "}
-        </h2>
-        <p className="mt-3 col-9 ml-5 px-3 text-center">
-          Get better in Coding through problem solving , Challenging your
-          friends and taking part in competitions !
-        </p>
+        {text}
+        <TypeWriter typing={1}> {hiddenText} </TypeWriter>
+
+        <p className="mt-3 col-9 ml-8 px-3 text-center"></p>
 
         <a
           href="/auth"
@@ -394,32 +410,29 @@ function LandMain(props) {
           <button
             type="butto"
             style={{
-              backgroundColor: "rgb(48, 18, 128)",
+              backgroundImage: "linear-gradient(to right,#a3d, purple )",
               border: "none",
             }}
-            className="ml-2 col-4 py-2  mt-5 btn btn-danger rounded-pill"
+            className="ml-2 col-7 py-2  mt-3 btn btn-danger rounded-pill "
           >
             <strong className=""> Get Started!</strong>
           </button>{" "}
         </a>
+
         <span className=" text-white "> or </span>
         <a
-          href="/user"
+          href="/algo"
           className="text-white"
           style={{ textDecoration: "none" }}
         >
           <span>
-            <button type="button" className="btn btn-outline-dark ml-3 mt-5">
+            <button type="button" className="btn btn-outline-dark ml-3 mt-3 ">
               Demo
             </button>{" "}
-            <GrCaretNext className="mt-5" />
+            <GrCaretNext className="mt-4" />
           </span>
         </a>
-        <div className="mt-4 ">
-          <FaPython className="mr-4"></FaPython>
-          <GrJava className="mr-4" />
-          <b className="mr-2">C</b>
-        </div>
+        <div className="mt-4 ">{languages}</div>
       </div>
     </div>
   );

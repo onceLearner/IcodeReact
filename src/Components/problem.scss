@@ -1,5 +1,4 @@
 .EditorContainer {
-  width: 100%;
 }
 .selectContainer {
   margin-bottom: 20px;
@@ -9,5 +8,13 @@
 }
 .EditorTextCont {
   display: grid;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 30% auto auto;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .EditorTextCont {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

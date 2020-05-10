@@ -1,24 +1,31 @@
 import React from "react";
 
 // temporary
-import { GrTest } from "react-icons/gr";
+import {
+  GrUser,
+  GrUserManager,
+  GrUserAdmin,
+  GrUserExpert,
+  GrUserSettings,
+  GrLogout,
+} from "react-icons/gr";
 import { TiThMenuOutline } from "react-icons/ti";
 
 var stylenav = {
   backgroundColor: "#97bbd",
 };
 const icodelogo = "Code</>";
-function Navbar(props) {
+function Nav(props) {
   return (
-    <div className="navContainer mb-4 shadow-sm ">
+    <div className="navContainer mb-4 bg-light shadow-sm">
       <nav className="navbar navbar-expand-lg  text-dark" style={stylenav}>
         <a id="logo" href="/" className="ml-2 mr-5">
           <img src={require("../media/logoByMe5.png")} />
         </a>
 
         <button
-          className="navbar-toggler rounded border "
-          style={{ backgroundColor: "#fefefa " }}
+          className="navbar-toggler border rounded  bg-light "
+          style={{ backgroundColor: "#fefefa" }}
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -26,7 +33,7 @@ function Navbar(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon mt-1">
+          <span className="navbar-toggler-icon ">
             <TiThMenuOutline className="" color="black" />
           </span>
         </button>
@@ -44,26 +51,30 @@ function Navbar(props) {
                 docs
               </a>
             </li>
+            <li className="nav-item ml-3">
+              <a href="/algo" className="nav-link">
+                {" "}
+                Algorithms
+              </a>
+            </li>
+            <li className="nav-item ml-3">
+              <a href="/user" className="nav-link">
+                {" "}
+                Interface
+              </a>
+            </li>
           </ul>
-          <a href="/auth" className="mr-3">
+          <a href="#" className="mr-3">
             {" "}
-            <button
-              type="button"
-              id="login"
-              className="px-3 btn btn-outline-dark "
-            >
-              login
-            </button>
+            <GrUserSettings />
           </a>
-          <a href="/auth" className="mr-3">
+          <a href="/" className="mr-3 ">
             {" "}
-            <button type="button" className="px-3 btn btn-danger   ">
-              Register
-            </button>
+            <GrLogout></GrLogout>
           </a>
         </div>
       </nav>
     </div>
   );
 }
-export default Navbar;
+export default Nav;

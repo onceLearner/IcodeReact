@@ -7,6 +7,7 @@ import Navbar from "./navbar";
 
 import ExplainProblem from "./explainProblem";
 import CodeHandler from "./codeHandler.js";
+import Nav from "./nav";
 
 import "./problem.scss";
 
@@ -19,11 +20,14 @@ import "ace-builds/src-noconflict/theme-tomorrow";
 import "ace-builds/src-noconflict/theme-dracula";
 
 import Select from "react-dropdown-select";
+import { languages } from "prismjs";
+import { BarLoader, DotLoader, SyncLoader, SkewLoader } from "react-spinners";
 const py = <DiPython></DiPython>;
 
 function Problem() {
   const [userCode, setUserCode] = useState("");
-  const [userLang, setUserLang] = useState("c");
+  const [userLang, setUserLang] = useState("py");
+  const flagLocalStorage = localStorage.getItem("actualProblem") ? true : false;
 
   const Languages = [
     {
@@ -63,7 +67,9 @@ function Problem() {
       const response = await fetch(RemoteAmazon);
       const data = await response.json();
       await setArrayProblems(data);
-      setsctualProblem(data[0]);
+
+      if (!flagLocalStorage) setsctualProblem(data[0]);
+      else setsctualProblem(JSON.parse(localStorage.getItem("actualProblem")));
 
       setLoading(false);
     };
@@ -77,62 +83,57 @@ function Problem() {
 
   return (
     <div className="problemMainDiv" style={darkmode}>
+      <Nav></Nav>
       <div className="listProblemsCont container    mt-4 ">
         {loading ? (
-          "loading ..."
-        ) : (
-          <div className="col-md-5">
-            <Select
-              width=""
-              placeholder="Choose a problem"
-              options={arrayProblems}
-              value={actualProblem}
-              className="text-dark bg-light"
-              onChange={(newValue) => {
-                setsctualProblem(newValue[0]);
-                console.log(actualProblem);
-              }}
-            />
+          <div>
+            {" "}
+            <span className="h5"></span> <BarLoader></BarLoader>{" "}
           </div>
+        ) : (
+          <div className="col-md-5"></div>
         )}
       </div>
-      <div className="EditorTextCont ">
-        <div className="text-container container">
+      <div className="EditorTextCont  ">
+        <div className="text-container mr-2 ml-3 ">
           <ExplainProblem actualProblem={actualProblem} />
         </div>
         <div className="editorLangCont">
-          <div className="selectContainer text-dark bg-light  float-right mr-5 px-3">
+          <div className="selectContainer text-dark mt-3     px-3">
             <Select
               options={Languages}
               value={userLang}
               onChange={(newvalue) => {
                 setUserLang(newvalue[0].name);
               }}
-              className=" mr-4"
+              className=""
               placeholder={" language </>"}
             />
           </div>
-          <div className="EditorContainer mr-3 mt-4 ml-3 mb-3  ">
+          <div className="EditorContainer mr-3  ml-3 mb-3 row ">
             <AceEditor
               className="border  border-white"
               mode={userLang}
               theme="dracula"
-              height="300px"
+              enableLiveAutocompletion="true"
+              width="54em"
+              height="33em"
+              placeholder=" code here "
               value={userCode}
               onChange={(newValue) => {
                 setUserCode(newValue);
               }}
             />
+            <div className="codeHandler ">
+              <CodeHandler
+                darkmode="true"
+                userCode={userCode}
+                userLang={userLang}
+                actualProblem={actualProblem}
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="codeHandler">
-        <CodeHandler
-          darkmode="true"
-          userCode={userCode}
-          userLang={userLang}
-          actualProblem={actualProblem}
-        />
       </div>
     </div>
   );

@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { FiToggleLeft, FiToggleRight } from "react-icons/fi";
-import logo from "./logo.svg";
 import "./App.css";
-import Signup from "./Components/signup";
-import Login from "./Components/login";
 import { Route, Switch, Router } from "react-router-dom";
 import LoginSingup from "./loginSignup";
 import Interface from "./interface";
 import Landing from "./landing";
+import Algorithms from "./Components/algorithms";
 
 function App() {
   return (
@@ -15,12 +12,14 @@ function App() {
       <Route exact path="/">
         <Landing />
       </Route>
-
       <Route path="/auth">
         <LoginSingup />
       </Route>
       <Route exact path="/user">
         <Interface />
+      </Route>
+      <Route exact path="/algo">
+        <Algorithms />
       </Route>
     </Switch>
   );

@@ -4,9 +4,9 @@ import { AiFillCode } from "react-icons/ai";
 
 var Style = {
   fontFamily: "monospace",
-  backgroundColor: "#fff ",
+  backgroundColor: "#f8f9fa ",
 };
-var font = { fontFamily: "kalam", color: "#898ea0" };
+var font = { fontFamily: "quicksand", color: "#898ea0" };
 
 /**
  *
@@ -25,13 +25,13 @@ function ExplainCode(probs) {
         <h5 className="mt-4" style={font}>
           Explication:
         </h5>
-        <p className=" border rounded border-dark py-3  mt-2" style={Style}>
+        <p className="  rounded  py-3  mt-2" style={Style}>
           {probs.actualProblem.text}
         </p>
       </div>
       <div>
         <h5 style={font}>Expected Input :</h5>
-        <p className=" border rounded py-3 " style={Style}>
+        <p className="  rounded py-3 " style={Style}>
           {probs.actualProblem.input === ""
             ? "no input"
             : probs.actualProblem.input}
@@ -39,7 +39,7 @@ function ExplainCode(probs) {
       </div>
       <div>
         <h5 style={font}>Expected output :</h5>
-        <p className=" border rounded py-3 " style={Style}>
+        <p className=" rounded py-3 " style={Style}>
           {probs.actualProblem.ref}
         </p>
       </div>

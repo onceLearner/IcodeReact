@@ -1,28 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poiret+One&display=swap");
-@media (max-width: 600px) {
-  #mainGrid {
-    margin-top: 190px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    height: 550px;
-  }
-}
-@media (min-width: 700px) {
-  #mainGrid {
-    display: grid;
-    grid-template-columns: 450px auto;
-    height: 500px;
-  }
-  #imganding {
-    width: 79%;
-  }
-}
 
 #bgContainer {
-  background-color: rgb(247, 249, 255);
+  background-color: rgb(245, 245, 245);
 
   box-shadow: 2px 2x 2x 2px rgb(225, 233, 232);
+}
+#mainGrid {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+@media (min-width: 700px) {
+  .mainTextContainer {
+    transform: translateX(-40px);
+  }
 }
 
 #navbarSupportedContent > a:nth-child(3) > button {
@@ -41,16 +31,14 @@
   border-radius: 20px;
   font-weight: bold;
 }
-body {
-  overflow-x: hidden;
-}
+
 #maintitle {
   color: red;
 }
 #logo {
   img {
     max-height: 55px;
-    transform: scale(1.4);
+    transform: scale(1.2);
     max-width: 120px;
     &:hover {
       cursor: pointer;

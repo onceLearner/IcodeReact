@@ -10,6 +10,9 @@
   flex-wrap: wrap-reverse;
 }
 @media (min-width: 700px) {
+  #bgContainer {
+    height: 590px;
+  }
   .mainTextContainer {
     transform: translateX(-40px);
   }

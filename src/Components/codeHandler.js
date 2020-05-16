@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { GrInProgress, GrCheckboxSelected, GrPlay } from "react-icons/gr";
+import React, { useState, useEffect } from "react";
+import { GrInProgress, GrCheckboxSelected, GrStatusGood } from "react-icons/gr";
 import { BsPlay } from "react-icons/bs";
 import HashLoader from "react-spinners/HashLoader";
 import "./problem.scss";
@@ -23,7 +23,8 @@ function CodeHandler(probs) {
   //userCode, userLang, actualProblem
 
   const [CodeStatus, setCodeStatus] = useState("");
-  const [codeErrors, setCodeErrors] = useState("");
+  const [codeErrors, setCodeErrors] = useState(null);
+  const [fetchData, setFetchData] = useState(null);
 
   const waitIcon = (
     <div className="ml-4 mt-3">
@@ -32,16 +33,42 @@ function CodeHandler(probs) {
       <GridLoader className="ml-3" />
     </div>
   );
-  const SuccessIcon = <GrCheckboxSelected size="23px"></GrCheckboxSelected>;
+
   const codeCorrect = (
     <div>
       <h4 className="text-success">
         {" "}
-        Correct <GrCheckboxSelected size="23px"></GrCheckboxSelected>
+        Correct{" "}
+        <GrStatusGood size="23px" style={{ fill: "green" }}></GrStatusGood>
       </h4>
     </div>
   );
 
+  const codeFalse = (
+    <div className="" style={{ width: "200px" }}>
+      <p className="ml-2 mt-4 text-error"> solution not working </p>
+      <a
+        className="btn btn-outline-danger"
+        data-toggle="collapse"
+        href="#collapseExample"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+      >
+        show errors
+      </a>
+      <div className="collapse" id="collapseExample">
+        <div className="card card-body">{codeErrors}</div>
+      </div>
+    </div>
+  );
+
+  //------ it is mandatory to reRender the page after we update the state  codeErrors;
+  useEffect(() => {
+    if (probs.userCode !== "") handleClick();
+  }, [codeErrors]);
+
+  //--- function to handle to the run button
   const handleClick = () => {
     setCodeStatus(waitIcon);
 
@@ -49,7 +76,6 @@ function CodeHandler(probs) {
     const EncodedInput = encodeURIComponent(probs.actualProblem.input); //  to encode only the code not the entire url;
     const EncodedRef = encodeURIComponent(probs.actualProblem.ref); //  to encode only the code not the entire url;
 
-    console.log(EncodedUserCode);
     const localBack = "http://localhost:8443/v6";
     const RemoteBack = "https://arcane-ridge-61898.herokuapp.com/v4";
     const RemoteAmazon =
@@ -65,42 +91,17 @@ function CodeHandler(probs) {
       })
 
       .then((data) => {
-        console.log(data);
-
         if (data.codeStatus === "not") {
+          setCodeErrors(data.errors);
           setCodeStatus(codeFalse);
-          setCodeErrors(data.errors);
-          setCodeErrors(data.errors);
-          console.log(codeErrors);
         } else setCodeStatus(codeCorrect);
       });
   };
-  const codeFalse = (
-    <div className="" style={{ width: "200px" }}>
-      <p className="ml-3 mt-4">
-        {" "}
-        solution not working
-        <a
-          class="btn btn-outline-danger"
-          data-toggle="collapse"
-          href="#collapseExample"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-        >
-          show errors
-        </a>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">{codeErrors}</div>
-      </div>
-    </div>
-  );
 
   return (
     <div>
       <button
-        className="btn btn-success  ml-3 "
+        className="btn btn-success  ml-1 "
         type="submit"
         onClick={handleClick}
       >

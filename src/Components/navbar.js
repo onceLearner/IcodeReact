@@ -34,7 +34,7 @@ function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active ">
-              <a className="nav-link text-dark " href="/">
+              <a className="nav-link border-bottom border-primary" href="/">
                 Home <span className="sr-only">(current)</span>
               </a>
             </li>

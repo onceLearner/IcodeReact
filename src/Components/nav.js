@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // temporary
 import {
@@ -9,13 +9,57 @@ import {
   GrUserSettings,
   GrLogout,
 } from "react-icons/gr";
-import { TiThMenuOutline } from "react-icons/ti";
+import { TiThMenuOutline, TiPlusOutline } from "react-icons/ti";
 
 var stylenav = {
   backgroundColor: "#97bbd",
 };
-const icodelogo = "Code</>";
+
+const HighlightLocation = (pathnam) => {
+  if (window.location.pathname == pathnam)
+    return "nav-link border-bottom border-primary";
+  return "nav-link text-dark";
+};
+
+const addPRob = (
+  <li className="nav-item ml-3">
+    <a href="/addProb" className={HighlightLocation("/addProb")}>
+      {" "}
+      add problem <TiPlusOutline></TiPlusOutline>
+    </a>
+  </li>
+);
+
 function Nav(props) {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [addProb, setAddProb] = useState(null);
+
+  const actualUser = localStorage.getItem("username")
+    ? localStorage.getItem("username")
+    : "hamid";
+
+  useEffect(() => {
+    const localBack = "http://localhost:8443/isAdmin";
+    const RemoteBack = "https://arcane-ridge-61898.herokuapp.com/isAdmin";
+    const RemoteAmazon =
+      "https://icoder2-env.eba-pgphjrgm.us-east-1.elasticbeanstalk.com:8443/isAdmin";
+
+    fetch(RemoteAmazon, {
+      method: "post",
+      body: `username=${actualUser}`,
+      headers: { "Content-type": "application/x-www-form-urlencoded" },
+    })
+      .then((res) => {
+        return res.text();
+      })
+      .then((data) => {
+        if (data == "yes") {
+          setIsAdmin(true);
+          setAddProb(addPRob);
+        }
+      });
+  }, []);
+
   return (
     <div className="navContainer mb-4 bg-light shadow-sm">
       <nav className="navbar navbar-expand-lg  text-dark" style={stylenav}>
@@ -46,23 +90,24 @@ function Nav(props) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark" href="#">
+              <a className={HighlightLocation("/docs")} href="#">
                 {" "}
                 docs
               </a>
             </li>
             <li className="nav-item ml-3">
-              <a href="/algo" className="nav-link">
+              <a href="/algo" className={HighlightLocation("/algo")}>
                 {" "}
                 Algorithms
               </a>
             </li>
-            <li className="nav-item ml-3">
-              <a href="/user" className="nav-link">
+            <li className="nav-item ml-3 text-dark">
+              <a href="/user" className={HighlightLocation("/user")}>
                 {" "}
                 Interface
               </a>
             </li>
+            {addProb}
           </ul>
           <a href="#" className="mr-3">
             {" "}

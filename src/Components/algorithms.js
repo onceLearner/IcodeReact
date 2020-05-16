@@ -31,6 +31,7 @@ export default function Algorithms(props) {
       <div id="algoMainGrid">
         <div className="border rounded shadow-sm col-lg-11 py-3 mt-3">
           <span
+            className="border-left px-2"
             style={{
               fontFamily: "Poiret one ",
               fontSize: "35px",
@@ -43,7 +44,7 @@ export default function Algorithms(props) {
           easy <BsStar></BsStar>
           <button
             type="button"
-            class="btn btn-outline-success  float-right"
+            className="btn btn-outline-success  float-right"
             onClick={(value) => {
               localStorage.setItem("actualProblem", JSON.stringify(element));
               console.log(JSON.parse(localStorage.getItem("actualProblem")));

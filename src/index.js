@@ -17,6 +17,7 @@ WebFont.load({
       "Kanit:ital,wght@1,200",
       "Source+Sans+Pro:wght@300",
       "Quicksand:wght@300",
+      "Khula:wght@300",
     ],
   },
 });

@@ -5,6 +5,7 @@ import LoginSingup from "./loginSignup";
 import Interface from "./interface";
 import Landing from "./landing";
 import Algorithms from "./Components/algorithms";
+import AddProb from "./Components/AddProb";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route exact path="/algo">
         <Algorithms />
+      </Route>
+      <Route exact="/addprob">
+        <AddProb></AddProb>
       </Route>
     </Switch>
   );

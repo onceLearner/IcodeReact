@@ -410,10 +410,9 @@ function LandMain(props) {
           <button
             type="butto"
             style={{
-              backgroundImage: "linear-gradient(to right,#a3d, purple )",
-              border: "none",
+              backgroundImage: "linear-gradient(to right,gray, black )",
             }}
-            className="ml-2 col-7 py-2  mt-3 btn btn-danger rounded-pill "
+            className="ml-2 col-5 py-2  mt-4 btn btn-dark rounded-pill "
           >
             <strong className=""> Get Started!</strong>
           </button>{" "}

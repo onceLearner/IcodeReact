@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { GrInProgress } from "react-icons/gr";
-import { RiUser4Line } from "react-icons/ri";
+import { GrInProgress, GrMail } from "react-icons/gr";
+import { RiUser4Line, RiLockPasswordLine } from "react-icons/ri";
 
 function Login(props) {
   const [username, setUsername] = useState("");
@@ -23,10 +23,12 @@ function Login(props) {
    */
 
   const handleLogin = () => {
+    const localBack = "http://localhost:8443/fakeGet";
+    const RemoteBack =
+      "https://icoder2-env.eba-pgphjrgm.us-east-1.elasticbeanstalk.com:8443/fakeGet";
+
     var reda;
-    fetch(
-      "https://icoder2-env.eba-pgphjrgm.us-east-1.elasticbeanstalk.com:8443/fakeGet"
-    )
+    fetch(RemoteBack)
       .then((res) => {
         return res.json();
       })
@@ -83,7 +85,11 @@ function Login(props) {
           </div>
           <div className="row mt-2">
             <form className="mx-auto mt-4 ">
-              <label>email</label>
+              <label>
+                {" "}
+                <GrMail />
+                email
+              </label>
               <input
                 value={username}
                 onChange={(evt) => {
@@ -93,7 +99,9 @@ function Login(props) {
                 name="username"
                 className="form-control col-md-15 "
               ></input>
-              <label>password</label>
+              <label>
+                <RiLockPasswordLine /> password
+              </label>
               <input
                 value={password}
                 onChange={(evt) => {

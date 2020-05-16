@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./signup.scss";
 import { GrInProgress, GrMail } from "react-icons/gr";
-import { RiUser4Line } from "react-icons/ri";
+import { RiUser4Line, RiLockPasswordLine } from "react-icons/ri";
 
 const waitIcon = <GrInProgress size="25px" className="ml-4"></GrInProgress>;
 const Exist = (
@@ -78,16 +78,21 @@ class Signup extends Component {
             </div>
             <div className="row mt-3">
               <form className="mx-auto mt-2">
-                <label>email</label>
+                <label>
+                  <GrMail /> email
+                </label>
                 <input
                   value={this.state.username}
                   onChange={this.handleUsername}
                   type="text"
                   name="username"
-                  placeholder="&#xF002;"
                   className="form-control col-md-15 "
                 ></input>
-                <label>password</label>
+                <label>
+                  {" "}
+                  <RiLockPasswordLine />
+                  password
+                </label>
                 <input
                   value={this.state.password}
                   onChange={this.handlePassword}
@@ -96,7 +101,10 @@ class Signup extends Component {
                   placeholder=""
                   className="form-control col-md-15"
                 ></input>
-                <label> Repeat password</label>
+                <label>
+                  {" "}
+                  <RiLockPasswordLine /> Repeat password{" "}
+                </label>
                 <input
                   type="password"
                   className="form-control col-md-15"
